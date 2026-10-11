@@ -1,10 +1,32 @@
-# Caso #2 Bases De Datos I
+<h1 align="center">PromptSales-Data-Platform</h1>
 
-## Profesor
+<p align="center">
+  PromptSales is a consolidated data platform, that includes a polyglot database ecosystem, an AI-powered marketing and sales company: PostgreSQL, SQL Server, MongoDB, and Redis running on Kubernetes, with an ETL pipeline and an MCP server for natural language queries.
+</p>
 
-- Rodrigo Nuñez Nuñez
+<p align="center">
+  <img src="https://img.shields.io/badge/SQL%20SERVER-2022-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server 2022">
+  <img src="https://img.shields.io/badge/POSTGRESQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL 16">
+  <img src="https://img.shields.io/badge/MONGODB-7-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB 7">
+  <img src="https://img.shields.io/badge/REDIS-7-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis 7">
+  <img src="https://img.shields.io/badge/KUBERNETES-DEPLOYMENT-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes">
+  <img src="https://img.shields.io/badge/PYTHON-MCP%20SERVER-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python MCP server">
+  <img src="https://img.shields.io/badge/PINECONE-VECTOR%20SEARCH-1C17FF?style=for-the-badge&logo=pinecone&logoColor=white" alt="Pinecone">
+  <img src="https://img.shields.io/badge/STATUS-COMPLETED-brightgreen?style=for-the-badge" alt="Status">
+</p>
 
-## Integrantes
+<p align="center">
+  <a href="#project-description">Description</a> ·
+  <a href="#technologies-used">Technologies</a> ·
+  <a href="#database-design">Database</a> ·
+  <a href="#architecture">Architecture</a> ·
+  <a href="#how-to-run">Installation</a> ·
+  <a href="#license">License</a>
+</p>
+
+---
+
+## Authors
 
 - Dylan Chacón Berrocal, 2023171126
 - Christopher Daniel Vargas Villalta, 2024108443
@@ -12,65 +34,250 @@
 - Luan Chaves Bermudez, 2019157253
 - Lindsay Marín Sánchez, 2024163904
 
+#### Professor
+
+- Rodrigo Nuñez Nuñez
+
 ---
 
-## Descripcion del Proyecto
+## Project Description
 
-SolidNY es una empresa radicada en Nueva York con 15 años de experiencia en mercadeo digital. Con el propósito de expandir su alcance y aprovechar el potencial de la inteligencia artificial, la compañía lanza una nueva marca llamada PromptSales, cuyo enfoque es cerrar ventas de forma eficiente y medible. Su criterio principal de éxito radica en la cantidad y el monto de las ventas logradas, utilizando una combinación de automatización, análisis de datos e inteligencia artificial aplicada a todas las etapas del embudo de ventas.
+SolidNY is a company based in New York with 15 years of experience in digital marketing. With the purpose of expanding its reach and taking advantage of the potential of artificial intelligence, the company launches a new brand called PromptSales, whose focus is to close sales efficiently and measurably. Its main success criterion lies in the number and amount of sales achieved, using a combination of automation, data analysis, and artificial intelligence applied to every stage of the sales funnel.
 
-PromptSales está conformada por un ecosistema de subempresas interconectadas, cada una especializada en una etapa diferente del proceso de mercadeo y ventas. Aunque pueden operar de forma independiente, todas se integran en un flujo automatizado que cubre desde la creación de contenido hasta el cierre de ventas.
+PromptSales is made up of an ecosystem of interconnected sub-companies, each specialized in a different stage of the marketing and sales process. Although they can operate independently, they all integrate into an automated flow that covers everything from content creation to closing sales.
 
-Las subempresas son:
+The sub-companies are:
 
 ### PromptContent
 
-- Se encarga de generar contenido creativo para campañas de mercadeo. Sus productos y servicios incluyen:
+- It is in charge of generating creative content for marketing campaigns. Its products and services include:
 
-- Creación de contenido textual, audiovisual e imágenes para redes sociales, anuncios y sitios web.
-- Generación de material adaptable a resultados de motores de búsqueda y respuestas de inteligencia artificial.
-- Uso de herramientas propias de IA para creación automatizada de contenido optimizado para distintos públicos meta.
-- Integración con plataformas externas como Canva, Adobe, Meta Business Suite y OpenAI API, etc
+- Creation of text, audiovisual content, and images for social networks, ads, and websites.
+- Generation of material adaptable to search engine results and artificial intelligence answers.
+- Use of its own AI tools for the automated creation of content optimized for different target audiences.
+- Integration with external platforms such as Canva, Adobe, Meta Business Suite, the OpenAI API, etc.
 
 ### PromptAds
 
-- Responsable de la ejecución y optimización de campañas publicitarias.
+- Responsible for running and optimizing advertising campaigns.
 
-- Diseño, segmentación y publicación de anuncios en redes sociales, email marketing, SMS, LinkedIn e influencers.
-- Análisis en tiempo real del rendimiento de campañas.
-- Generación automática de campañas a partir de datos de públicos meta y objetivos de venta.
-- Integración con plataformas externas como Google Ads, Meta Ads, TikTok for Business, Mailchimp y plataformas de CRM.
+- Design, segmentation, and publishing of ads on social networks, email marketing, SMS, LinkedIn, and influencers.
+- Real-time analysis of campaign performance.
+- Automatic generation of campaigns from target audience data and sales goals.
+- Integration with external platforms such as Google Ads, Meta Ads, TikTok for Business, Mailchimp, and CRM platforms.
 
 ### PromptCrm
 
-- Gestiona el seguimiento de los clientes potenciales hasta el cierre de la venta.
+- Manages the follow-up of potential customers until the sale is closed.
 
-- Registro y clasificación automática de leads provenientes de distintas fuentes.
-- Implementación de chatbots, voicebots y flujos automatizados de atención.
-- Seguimiento de compradores y predicción de intención de compra mediante IA.
-- Integración con plataformas como HubSpot, Salesforce, Zendesk, WhatsApp Business API, entre otras
+- Automatic registration and classification of leads coming from different sources.
+- Implementation of chatbots, voicebots, and automated support flows.
+- Follow-up of buyers and prediction of purchase intent through AI.
+- Integration with platforms such as HubSpot, Salesforce, Zendesk, WhatsApp Business API, among others.
 
 ---
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-Para la elaboracion de el proyecto se emplearon distintas tecnologias tales como bases de datos relacionales(SQL Server, PostgreSQL) y no relacionales(MongoDB).
+Different technologies were used to build the project, such as relational databases (SQL Server, PostgreSQL) and non-relational databases (MongoDB).
 
-Implementación de MCP Servers para conectar con las bases de datos y realizar consultas directamente por medio de lenguaje natural.
+MCP Servers were implemented to connect to the databases and run queries directly through natural language.
 
-Se indexo mediante Pinecone descripciones de archivos tipo media que estaban almacenados en PromptContent para asi poder realizar busquedas rapidas usando IA a través de los MCP.
+The descriptions of the media files stored in PromptContent were indexed with Pinecone, so that fast AI-powered searches could be run through the MCPs.
 
-Tambienn se utilizaron los Microsoft Integration Services para crear/realizar un ETL(Extract, Transform, Load) en PromptSales para reunir información almacenada en las demas bases(CRM, ADS, etc) para poder analizar y generar reportes con dicha información.
+Microsoft Integration Services was also used to build an ETL (Extract, Transform, Load) in PromptSales that gathers the information stored in the other databases (CRM, ADS, etc.) so it can be analyzed and used to generate reports.
 
-## Diseño de las Bases de Datos
+---
+
+## Database Design
 
 ### PromptSales
 
-- [PromptSales](https://github.com/chris124v/Caso-2-Bases-De-Datos-I/tree/main/BasesDeDatos/PromptSales/Disenos "Diseño de la base de datos")
+- [PromptSales](BasesDeDatos/PromptSales/Disenos "Database design")
 
-- [PromptContent](https://github.com/chris124v/Caso-2-Bases-De-Datos-I/tree/main/BasesDeDatos/PromptContent/Disenos "Diseño de la base de datos")
+- [PromptContent](BasesDeDatos/PromptContent/Disenos "Database design")
 
-- [PromptCrm](https://github.com/chris124v/Caso-2-Bases-De-Datos-I/tree/main/BasesDeDatos/PromptCRM/Disenos "Diseño de la base de datos")
+- [PromptCrm](BasesDeDatos/PromptCRM/Disenos "Database design")
 
-- [PromptAds](https://github.com/chris124v/Caso-2-Bases-De-Datos-I/tree/main/BasesDeDatos/PromptAds/Disenos "Diseño de la base de datos")
+- [PromptAds](BasesDeDatos/PromptAds/Disenos "Database design")
 
-## Arquitectura
+| Database | Engine | Size | Highlights |
+|----------|--------|------|------------|
+| **PromptSales** | PostgreSQL 16 | 54 tables | Consolidated data warehouse that receives the data of the other sub-companies through the ETL, for analysis and reports. |
+| **PromptContent** | MongoDB 7 | 15 collections | Users, clients, media, campaigns, AI models, external services, API call logs, and subscriptions and payments. Image descriptions are indexed in Pinecone. |
+| **PromptAds** | SQL Server 2022 | 56 tables | Stored procedure that inserts a full campaign with table-valued parameters, analysis of negative and positive campaigns, and `INTERSECT`, `EXCEPT`, and `MERGE` queries. |
+| **PromptCrm** | SQL Server 2022 | 35 tables | Concurrency problem demos (cascade deadlock, dirty read, incorrect summary), AES-256 encryption with a certificate and a symmetric key, and a linked server to PromptAds. |
+| **Redis** | Redis 7 | - | Deployed in Kubernetes as part of the environment. |
+
+---
+
+## Architecture
+
+Every database runs in its own Kubernetes namespace. An ETL job consolidates the data of PromptContent, PromptAds, and PromptCrm into PromptSales, and an MCP server lets an AI assistant query the databases and search media in natural language.
+
+```mermaid
+flowchart TB
+    classDef mongo fill:#47A248,stroke:#2f7a30,color:#ffffff
+    classDef sqls fill:#CC2927,stroke:#8f1c1b,color:#ffffff
+    classDef pg fill:#4169E1,stroke:#2b4aa8,color:#ffffff
+    classDef redis fill:#DC382D,stroke:#a02820,color:#ffffff
+    classDef ext fill:#6e7681,stroke:#484f58,color:#ffffff
+    classDef tool fill:#5C4EE5,stroke:#3f35a8,color:#ffffff
+    classDef etl fill:#F2C811,stroke:#b08f00,color:#1f1f1f
+    classDef client fill:#0B7285,stroke:#064e5c,color:#ffffff
+
+    CLIENT(["AI assistant<br/>VS Code or MCP Inspector"]):::client
+
+    subgraph MCP["MCP Server - Python"]
+        direction LR
+        T1["get_content<br/>semantic image search"]:::tool
+        T2["generate_campaign_messages"]:::tool
+        T3["natural_language_router<br/>natural language to queries"]:::tool
+    end
+
+    subgraph EXT["External services"]
+        direction LR
+        PIN["Pinecone<br/>vector index"]:::ext
+        GROQ["Groq API<br/>LLM"]:::ext
+        PIX["Pixabay API<br/>stock images"]:::ext
+    end
+
+    subgraph K8S["Kubernetes cluster - Docker Desktop"]
+        direction LR
+        subgraph NSC["namespace promptcontent"]
+            MONGO[("MongoDB 7<br/>PromptContent<br/>15 collections")]:::mongo
+        end
+        subgraph NSA["namespace promptads"]
+            ADS[("SQL Server 2022<br/>PromptAds<br/>56 tables")]:::sqls
+        end
+        subgraph NSR["namespace promptcrm"]
+            CRM[("SQL Server 2022<br/>PromptCRM<br/>35 tables")]:::sqls
+        end
+        subgraph NSS["namespace promptsales"]
+            PS[("PostgreSQL 16<br/>PromptSales<br/>54 tables")]:::pg
+        end
+        subgraph NSX["namespace redis"]
+            REDIS[("Redis 7")]:::redis
+        end
+    end
+
+    subgraph ETL["ETL every 11 minutes - SSIS package and SQL Server Agent job"]
+        direction LR
+        E1["Aggregation pipeline<br/>with delta filter"]:::etl
+        E2["View vw_PublishedAds_Delta"]:::etl
+        E3["View vw_ETLCRM"]:::etl
+    end
+
+    CLIENT --> MCP
+
+    T1 -->|"search by description"| PIN
+    T1 -->|"read media"| MONGO
+    T2 -->|"generate messages"| GROQ
+    T3 --> MONGO
+    T3 --> ADS
+    T3 --> CRM
+    T3 --> PS
+
+    PIX -.->|"image seed data"| MONGO
+    MONGO -.->|"index descriptions"| PIN
+    CRM -->|"linked server PROMPTADS_LINK"| ADS
+
+    MONGO --> E1
+    ADS --> E2
+    CRM --> E3
+    E1 ==> PS
+    E2 ==> PS
+    E3 ==> PS
+```
+
+Thick arrows are the ETL load into PromptSales, solid arrows are runtime queries, and dotted arrows are the data preparation scripts.
+
+| Component | Description |
+|-----------|-------------|
+| **Kubernetes environment** | Namespaces, secrets, and one deployment, persistent volume claim, and service per database (Redis uses a config map instead). The databases are exposed through NodePorts: PostgreSQL `30432`, MongoDB `30017`, SQL Server PromptAds `31433`, SQL Server PromptCRM `32433`, and Redis `30379`. |
+| **ETL** | An SSIS package, scheduled by a SQL Server Agent job every 11 minutes, loads only the new or modified data (delta) from PromptContent, PromptAds, and PromptCrm into PromptSales. |
+| **MCP server** | Python server with connectors for PostgreSQL, MongoDB, and SQL Server. It exposes three tools: `get_content` (semantic search of images with Pinecone), `generate_campaign_messages` (campaign messages by audience with an LLM), and `natural_language_router` (natural language requests to the databases). |
+| **Security and concurrency** | PromptCrm includes AES-256 encryption with a certificate and a symmetric key, and scripts that reproduce concurrency problems. |
+
+---
+
+## Project Structure
+
+```text
+PromptSales-Data-Platform/
+├── BasesDeDatos/
+│   ├── PromptSales/           # PostgreSQL: designs, creation scripts, ETL (SSIS), and SQL Server Agent job
+│   ├── PromptContent/         # MongoDB: collections, data generation, and Pinecone indexing scripts (Python)
+│   ├── PromptAds/             # SQL Server: creation, inserts, stored procedures, and delta view
+│   ├── PromptCRM/             # SQL Server: creation, inserts, concurrency, encryption, and linked server
+│   ├── Redis/                 # Redis (deployed in Kubernetes)
+│   └── DiseñosBD.md           # Schemas of the PromptContent collections
+├── kubernetes/
+│   ├── namespaces/            # One namespace per database
+│   ├── secrets/               # Credentials of each database
+│   ├── databases/             # Deployment, PVC, and service of each database
+│   └── scripts/               # deploy-all.ps1, delete-all.ps1, and status-check.ps1
+├── mcp-server/                # MCP server (Python): connectors, configuration, and tools
+├── Investigacion y Documentacion/
+│   ├── Investigacion.md       # Research
+│   ├── Documentacion.md       # Project documentation
+│   └── Bitacora.md            # Logbook
+├── requirements.txt
+├── LICENSE
+└── README.md
+```
+
+---
+
+## How To Run
+
+### Prerequisites
+
+- Docker Desktop with Kubernetes enabled, and `kubectl`
+- Python 3.10 or newer
+- A SQL Server client (SSMS or `sqlcmd`), pgAdmin or `psql`, and MongoDB Compass (optional)
+- Visual Studio with the SQL Server Integration Services extension (only to open the ETL)
+- Pinecone and Groq API keys (only for the MCP server and the PromptContent scripts)
+
+### Quick start
+
+1. Deploy the databases in Kubernetes from the repository root:
+   ```powershell
+   ./kubernetes/scripts/deploy-all.ps1
+   ./kubernetes/scripts/status-check.ps1
+   ```
+   To remove everything, run `./kubernetes/scripts/delete-all.ps1`.
+2. Create and populate each database (see the `Scripts` folder of each one):
+   - **PromptSales:** `BasesDeDatos/PromptSales/Scripts/CreationPromptSales.sql`, then `LlenadoSales.sql`.
+   - **PromptAds:** `BasesDeDatos/PromptAds/Scripts/CreationPromptAds.sql`, then `InsertsPromptAds.sql` and the stored procedure scripts.
+   - **PromptCrm:** `BasesDeDatos/PromptCRM/Scripts/PromptCRM_CreationScript.sql`, then `InsertClients.sql`, `InsertSales.sql`, `InsertUTMs.sql`, and `Views.sql`.
+   - **PromptContent:** run the Python scripts in `BasesDeDatos/PromptContent/Scripts/` in order: `001-creacion-colecciones.py`, `002-generar-100-imagenes.py`, `0003-llenado-colecciones.py`, `004-indexación-descripciones-pinecone.py`, and `005-registrar-groq-servicio.py`.
+3. Install the Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Create a `.env` file in the repository root with your keys (the file is ignored by Git):
+   ```text
+   PINECONE_API_KEY=your_key
+   GROQ_API_KEY=your_key
+   AI_PROVIDER=groq
+   PROJECT_ROOT=C:\path\to\this\repository
+   ```
+5. Start the MCP server in inspector mode:
+   ```bash
+   cd mcp-server
+   mcp-inspector --config mcp-config.json
+   ```
+   It can also be started from VS Code with `mcp-server/.vscode/mcp.json`.
+6. To run the ETL, open `BasesDeDatos/PromptSales/Scripts/PromptSalesETL/PromptSalesETL.sln` in Visual Studio, configure the connections, and run `BasesDeDatos/PromptSales/Scripts/Job11.sql` to schedule the job.
+
+### Notes
+
+- The database hosts, ports, and demo credentials are defined in `kubernetes/secrets/all-secrets.yaml` and `mcp-server/config/databases.yaml`. They are meant for local development only: change them in any other environment.
+- The project documentation in `Investigacion y Documentacion/` is written in Spanish.
+
+---
+
+## License
+
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
