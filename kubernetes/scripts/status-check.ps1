@@ -44,9 +44,21 @@ Write-Host "  Redis:      localhost:30379" -ForegroundColor White
 Write-Host ""
 
 Write-Host "[5/5] Credenciales..." -ForegroundColor Yellow
-Write-Host "PostgreSQL: user=postgres, pass=postgres123" -ForegroundColor Gray
-Write-Host "MongoDB:    user=mongouser, pass=mongo123" -ForegroundColor Gray
-Write-Host "SQL Server: user=sa, pass=YourStrong!Passw0rd" -ForegroundColor Gray
-Write-Host "Redis:      pass=redis123" -ForegroundColor Gray
+# Las contrasenas se leen del archivo .env de la raiz del repositorio
+$envFile = Join-Path (Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path))) ".env"
+$envVars = @{}
+if (Test-Path $envFile) {
+    foreach ($line in Get-Content $envFile) {
+        if ($line -match '^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$') {
+            $envVars[$Matches[1]] = $Matches[2].Trim().Trim('"').Trim("'")
+        }
+    }
+} else {
+    Write-Host "No se encontro el archivo .env (copia .env.example como .env)" -ForegroundColor Red
+}
+Write-Host "PostgreSQL: user=postgres, pass=$($envVars['POSTGRES_PASSWORD'])" -ForegroundColor Gray
+Write-Host "MongoDB:    user=mongouser, pass=$($envVars['MONGO_PASSWORD'])" -ForegroundColor Gray
+Write-Host "SQL Server: user=sa, pass=$($envVars['MSSQL_SA_PASSWORD'])" -ForegroundColor Gray
+Write-Host "Redis:      pass=$($envVars['REDIS_PASSWORD'])" -ForegroundColor Gray
 Write-Host ""
 Write-Host "Listo!" -ForegroundColor Green

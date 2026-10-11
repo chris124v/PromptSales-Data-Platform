@@ -3,7 +3,7 @@ postgresql:
   port: 30432
   database: promptsales
   username: postgres
-  password: postgres123
+  password: "${POSTGRES_PASSWORD}" # Definida en el archivo .env
   namespace: promptsales
 
 mongodb:
@@ -11,7 +11,7 @@ mongodb:
   port: 30017
   database: promptcontent
   username: mongouser # Agregar usuario
-  password: mongo123 # Agregar contraseña
+  password: "${MONGO_PASSWORD}" # Definida en el archivo .env
   authSource: admin # Agregar base de autenticación
   namespace: promptcontent
 
@@ -20,7 +20,7 @@ sqlserver1:
   port: 31433
   database: promptads
   username: sa
-  password: YourStrong!Passw0rd
+  password: "${MSSQL_SA_PASSWORD}" # Definida en el archivo .env
   namespace: promptads
 
 sqlserver2:
@@ -28,5 +28,5 @@ sqlserver2:
   port: 32433
   database: promptcrm
   username: sa
-  password: YourStrong!Passw0rd
+  password: "${MSSQL_SA_PASSWORD}" # Definida en el archivo .env
   namespace: promptcrm

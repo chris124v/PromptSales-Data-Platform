@@ -8,11 +8,15 @@ import random
 import hashlib
 from datetime import datetime, timedelta
 from faker import Faker
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ============================================
 # CONFIGURACIÓN
 # ============================================
-MONGO_URL = "mongodb://mongouser:mongo123@localhost:30017/promptcontent?authSource=admin"
+MONGO_URL = os.getenv("MONGO_URL")  # Definida en el archivo .env
 DATABASE_NAME = "promptcontent"
 
 # Inicializar Faker para generar datos realistas

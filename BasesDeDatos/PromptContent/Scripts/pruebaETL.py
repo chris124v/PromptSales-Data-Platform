@@ -7,11 +7,15 @@ Datos mínimos pero suficientes para prueba de concepto
 from pymongo import MongoClient
 from datetime import datetime, timedelta
 import sys
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ============================================
 # CONFIGURACIÓN DE CONEXIÓN
 # ============================================
-MONGO_URL = "mongodb://mongouser:mongo123@localhost:30017/promptcontent?authSource=admin"
+MONGO_URL = os.getenv("MONGO_URL")  # Definida en el archivo .env
 DATABASE_NAME = "promptcontent"
 
 def seed_mongodb():

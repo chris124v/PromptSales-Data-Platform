@@ -2,11 +2,15 @@
 from pymongo import MongoClient, ASCENDING, DESCENDING, TEXT
 from pymongo.errors import CollectionInvalid
 import sys
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ============================================
 # CONFIGURACIÓN DE CONEXIÓN
 # ============================================
-MONGO_URL = "mongodb://mongouser:mongo123@localhost:30017/promptcontent?authSource=admin"
+MONGO_URL = os.getenv("MONGO_URL")  # Definida en el archivo .env
 DATABASE_NAME = "promptcontent"
 
 def create_database_and_collections():

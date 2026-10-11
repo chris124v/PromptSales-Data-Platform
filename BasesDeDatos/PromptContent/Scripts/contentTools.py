@@ -24,7 +24,7 @@ AI_PROVIDER = os.getenv('AI_PROVIDER', 'groq')  # Valor por defecto
 # ============================================
 
 # MongoDB
-MONGO_URL = "mongodb://mongouser:mongo123@localhost:30017/promptcontent?authSource=admin"
+MONGO_URL = os.getenv("MONGO_URL")  # Definida en el archivo .env
 DATABASE_NAME = "promptcontent"
 
 # Pinecone

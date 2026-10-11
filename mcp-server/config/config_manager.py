@@ -1,6 +1,7 @@
 import yaml
 import os
 from typing import Dict, Any
+from dotenv import load_dotenv
 
 class ConfigManager:
     def __init__(self, config_path: str = None):
@@ -10,10 +11,11 @@ class ConfigManager:
         self.config = self._load_config()
     
     def _load_config(self) -> Dict[str, Any]:
-        """Cargar configuración desde YAML"""
+        """Cargar configuración desde YAML (las contraseñas ${VAR} se toman del archivo .env)"""
         try:
+            load_dotenv(os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
             with open(self.config_path, 'r') as file:
-                return yaml.safe_load(file)
+                return yaml.safe_load(os.path.expandvars(file.read()))
         except Exception as e:
             raise Exception(f"Error loading config from {self.config_path}: {str(e)}")
     

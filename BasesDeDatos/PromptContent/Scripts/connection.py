@@ -1,6 +1,10 @@
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
 
-cliente = MongoClient('mongodb://mongouser:mongo123@localhost:30017/promptcontent?authSource=admin')
+load_dotenv()
+
+cliente = MongoClient(os.getenv("MONGO_URL"))  # Definida en el archivo .env
 
 db = cliente['promptcontent']
 

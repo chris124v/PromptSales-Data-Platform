@@ -1,4 +1,5 @@
 <h1 align="center">PromptSales-Data-Platform</h1>
+<p align="center"><img src="docs/images/promptsales-logo.png" alt="PromptSales logo" width="80%"></p>
 
 <p align="center">
   PromptSales is a consolidated data platform, that includes a polyglot database ecosystem, an AI-powered marketing and sales company: PostgreSQL, SQL Server, MongoDB, and Redis running on Kubernetes, with an ETL pipeline and an MCP server for natural language queries.
@@ -213,7 +214,7 @@ PromptSales-Data-Platform/
 │   └── DiseñosBD.md           # Schemas of the PromptContent collections
 ├── kubernetes/
 │   ├── namespaces/            # One namespace per database
-│   ├── secrets/               # Credentials of each database
+│   ├── secrets/               # Secrets of each database (passwords taken from .env)
 │   ├── databases/             # Deployment, PVC, and service of each database
 │   └── scripts/               # deploy-all.ps1, delete-all.ps1, and status-check.ps1
 ├── mcp-server/                # MCP server (Python): connectors, configuration, and tools
@@ -221,6 +222,8 @@ PromptSales-Data-Platform/
 │   ├── Investigacion.md       # Research
 │   ├── Documentacion.md       # Project documentation
 │   └── Bitacora.md            # Logbook
+├── docs/images/               # README images (logo)
+├── .env.example               # Template of the environment variables (passwords and API keys)
 ├── requirements.txt
 ├── LICENSE
 └── README.md
@@ -238,29 +241,24 @@ PromptSales-Data-Platform/
 - Visual Studio with the SQL Server Integration Services extension (only to open the ETL)
 - Pinecone and Groq API keys (only for the MCP server and the PromptContent scripts)
 
-### Quick start
-
-1. Deploy the databases in Kubernetes from the repository root:
+1. Copy `.env.example` as `.env` in the repository root and fill in the database passwords and the API keys (the `.env` file is ignored by Git):
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+2. Deploy the databases in Kubernetes from the repository root. `deploy-all.ps1` takes the passwords from `.env` to create the Kubernetes secrets:
    ```powershell
    ./kubernetes/scripts/deploy-all.ps1
    ./kubernetes/scripts/status-check.ps1
    ```
    To remove everything, run `./kubernetes/scripts/delete-all.ps1`.
-2. Create and populate each database (see the `Scripts` folder of each one):
+3. Create and populate each database (see the `Scripts` folder of each one):
    - **PromptSales:** `BasesDeDatos/PromptSales/Scripts/CreationPromptSales.sql`, then `LlenadoSales.sql`.
    - **PromptAds:** `BasesDeDatos/PromptAds/Scripts/CreationPromptAds.sql`, then `InsertsPromptAds.sql` and the stored procedure scripts.
    - **PromptCrm:** `BasesDeDatos/PromptCRM/Scripts/PromptCRM_CreationScript.sql`, then `InsertClients.sql`, `InsertSales.sql`, `InsertUTMs.sql`, and `Views.sql`.
    - **PromptContent:** run the Python scripts in `BasesDeDatos/PromptContent/Scripts/` in order: `001-creacion-colecciones.py`, `002-generar-100-imagenes.py`, `0003-llenado-colecciones.py`, `004-indexación-descripciones-pinecone.py`, and `005-registrar-groq-servicio.py`.
-3. Install the Python dependencies:
+4. Install the Python dependencies:
    ```bash
    pip install -r requirements.txt
-   ```
-4. Create a `.env` file in the repository root with your keys (the file is ignored by Git):
-   ```text
-   PINECONE_API_KEY=your_key
-   GROQ_API_KEY=your_key
-   AI_PROVIDER=groq
-   PROJECT_ROOT=C:\path\to\this\repository
    ```
 5. Start the MCP server in inspector mode:
    ```bash
@@ -272,8 +270,8 @@ PromptSales-Data-Platform/
 
 ### Notes
 
-- The database hosts, ports, and demo credentials are defined in `kubernetes/secrets/all-secrets.yaml` and `mcp-server/config/databases.yaml`. They are meant for local development only: change them in any other environment.
-- The project documentation in `Investigacion y Documentacion/` is written in Spanish.
+- The passwords and API keys live only in the `.env` file. `kubernetes/secrets/all-secrets.yaml` and `mcp-server/config/databases.yaml` reference them as `${VARIABLE}`, and the PromptContent scripts read `MONGO_URL` from it. Use `.env.example` as the template.
+- The project documentation in `Investigacion y Documentacion/`.
 
 ---
 
