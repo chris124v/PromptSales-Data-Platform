@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="#project-description">Description</a> ·
-  <a href="#technologies-used">Technologies</a> ·
+  <a href="#technology-stack">Technologies</a> ·
   <a href="#database-design">Database</a> ·
   <a href="#architecture">Architecture</a> ·
   <a href="#installation">Installation</a> ·
@@ -77,7 +77,7 @@ The sub-companies are:
 
 ---
 
-## Technologies Used
+## Technology Stack
 
 Different technologies were used to build the project, such as relational databases (SQL Server, PostgreSQL) and non-relational databases (MongoDB).
 
@@ -86,6 +86,13 @@ MCP Servers were implemented to connect to the databases and run queries directl
 The descriptions of the media files stored in PromptContent were indexed with Pinecone, so that fast AI-powered searches could be run through the MCPs.
 
 Microsoft Integration Services was also used to build an ETL (Extract, Transform, Load) in PromptSales that gathers the information stored in the other databases (CRM, ADS, etc.) so it can be analyzed and used to generate reports.
+
+- **Databases:** PostgreSQL 16 (PromptSales), SQL Server 2022 (PromptAds and PromptCrm), MongoDB 7 (PromptContent), and Redis 7.
+- **ETL:** SQL Server Integration Services (SSIS) and SQL Server Agent.
+- **Infrastructure:** Docker Desktop and Kubernetes (namespaces, secrets, deployments, persistent volume claims, and NodePort services).
+- **MCP server:** Python with the `mcp` SDK, `pymongo`, `pyodbc`, `asyncpg`, and `psycopg2`.
+- **AI and search:** Pinecone (vector search), Groq API (LLM), and Pixabay API (sample images).
+- **Tools:** SQL Server Management Studio, pgAdmin 4, MongoDB Compass, Redis Insight, Visual Studio, and VS Code.
 
 ---
 
