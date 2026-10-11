@@ -12,7 +12,6 @@
   <img src="https://img.shields.io/badge/KUBERNETES-DEPLOYMENT-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes">
   <img src="https://img.shields.io/badge/PYTHON-MCP%20SERVER-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python MCP server">
   <img src="https://img.shields.io/badge/PINECONE-VECTOR%20SEARCH-1C17FF?style=for-the-badge&logo=pinecone&logoColor=white" alt="Pinecone">
-  <img src="https://img.shields.io/badge/STATUS-COMPLETED-brightgreen?style=for-the-badge" alt="Status">
 </p>
 
 <p align="center">
