@@ -1,5 +1,5 @@
 <h1 align="center">PromptSales-Data-Platform</h1>
-<p align="center"><img src="docs/images/promptsales-logo.png" alt="PromptSales logo" width="80%"></p>
+<p align="center"><img src="docs/images/promptsales-logo.png" alt="PromptSales logo" width="56%"></p>
 
 <p align="center">
   PromptSales is a consolidated data platform, that includes a polyglot database ecosystem, an AI-powered marketing and sales company: PostgreSQL, SQL Server, MongoDB, and Redis running on Kubernetes, with an ETL pipeline and an MCP server for natural language queries.
@@ -20,7 +20,7 @@
   <a href="#technologies-used">Technologies</a> ·
   <a href="#database-design">Database</a> ·
   <a href="#architecture">Architecture</a> ·
-  <a href="#how-to-run">Installation</a> ·
+  <a href="#installation">Installation</a> ·
   <a href="#license">License</a>
 </p>
 
@@ -231,7 +231,7 @@ PromptSales-Data-Platform/
 
 ---
 
-## How To Run
+## Installation
 
 ### Prerequisites
 
